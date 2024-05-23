@@ -1,0 +1,41 @@
+.container {
+    position: fixed;
+    /* Fixed positioning to place the container relative to the viewport */
+    top: 0;
+    /* Align the container to the top */
+    left: 0;
+    /* Align the container to the left */
+    display: flex;
+    /* Use flexbox for arranging the circles */
+    gap: 10px;
+    /* Add some space between the circles */
+    padding: 10px;
+    /* Optional padding around the circles */
+}
+
+.circles {
+    width: 50px;
+    /* Adjust the width of the circles */
+    height: 50px;
+    /* Adjust the height of the circles */
+    background-color: red;
+    /* Change the color of the circles if needed */
+    border-radius: 50%;
+    /* Make the divs circular */
+}
+.container2{
+        position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+}
+
+
+.image{
+    width: 90px;
+    display: block;
+    margin: auto;
+    cursor: pointer;
+}
+
+
