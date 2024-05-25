@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import Image from "./assets/Image.png";
 
 export const Movement: React.FC = () => {
   const [left, setLeft] = useState<number>(0);
@@ -37,7 +36,7 @@ export const Movement: React.FC = () => {
     <>
       <div className="container2">
         <img
-          src={Image}
+          src="/player.png"
           className="image"
           style={{ position: "relative", top: `${top}px`, left: `${left}px` }}
         />
