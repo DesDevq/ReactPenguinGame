@@ -5,38 +5,50 @@ import { useEffect, useState } from 'react'
 export const Player: React.FC<IPlayer> = ({ id, position, size }) =>
 {
   const [currentPosition, setCurrentPosition] = useState<IPlayerPosition>({ x: position.x, y: position.y })
+  const activeKeys = new Set<string>()
 
   const handleKeyDown = (event: KeyboardEvent) =>
-  {
-    switch (event.key)
-    {
-      case Keyboard.Down:
-        setCurrentPosition((prev) => ({ ...prev, y: prev.y + 10 }))
-        break
+    activeKeys.add(event.key)
 
-      case Keyboard.Left:
-        setCurrentPosition((prev) => ({ ...prev, x: prev.x - 10 }))
-        break
-
-      case Keyboard.Right:
-        setCurrentPosition((prev) => ({ ...prev, x: prev.x + 10 }))
-        break
-
-      case Keyboard.Up:
-        setCurrentPosition((prev) => ({ ...prev, y: prev.y - 10 }))
-        break
-
-      default:
-        break
-    }
-  }
+  const handleKeyUp = (event: KeyboardEvent) =>
+    activeKeys.delete(event.key)
 
   useEffect(() =>
   {
+    const updatePosition = () =>
+    {
+      setCurrentPosition((prev) =>
+      {
+        let newPosition = { ...prev }
+
+        if (activeKeys.has(Keyboard.Up))
+          newPosition.y -= 10
+
+        if (activeKeys.has(Keyboard.Down))
+          newPosition.y += 10
+
+        if (activeKeys.has(Keyboard.Left))
+          newPosition.x -= 10
+
+        if (activeKeys.has(Keyboard.Right))
+          newPosition.x += 10
+
+        return newPosition
+      })
+    }
+
+    const intervalId = setInterval(updatePosition, 10)
+
     window.addEventListener('keydown', handleKeyDown)
+    window.addEventListener('keyup', handleKeyUp)
 
     return () =>
+    {
+      clearInterval(intervalId)
+
       window.removeEventListener('keydown', handleKeyDown)
+      window.removeEventListener('keyup', handleKeyUp)
+    }
   }, [])
 
   return (
