@@ -1,12 +1,34 @@
 import "./styles.css";
 
-export const Obstacles: React.FC = () => {
+interface CircleProps {
+  left: number;
+  color: string;
+  animationDuration?: number;
+  animationDelay?: number;
+  size: string;
+}
+
+export const Obstacles: React.FC<CircleProps> = ({
+  left,
+  color,
+  animationDuration,
+  animationDelay,
+  size,
+}) => {
   return (
     <>
-      <div className="container">
-        <div className="circles"></div>
-        <div className="circles"></div>
-        <div className="circles"></div>
+      <div className="CirclesContainer">
+        <div
+          className="circle"
+          style={{
+            height: `${size}`,
+            width: `${size}`,
+            left: `${left}px`,
+            backgroundColor: color,
+            animationDuration: `${animationDuration}s`,
+            animationDelay: `${animationDelay}s`,
+          }}
+        ></div>
       </div>
     </>
   );

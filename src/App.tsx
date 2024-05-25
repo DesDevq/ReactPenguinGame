@@ -1,11 +1,11 @@
+import FallingCircles from "./CirclesContainer";
 import { Movement } from "./movement";
-import { Obstacles } from "./obstacles";
 
 function App() {
   return (
     <>
       <Movement />
-      <Obstacles />
+      <FallingCircles />
     </>
   );
 }
