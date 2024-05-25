@@ -1,4 +1,4 @@
 export interface IPlayground
 {
-  children: JSX.Element
+  children: React.ReactNode
 }
