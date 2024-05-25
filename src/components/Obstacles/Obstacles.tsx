@@ -7,8 +7,8 @@ const newRandomObstacle = (updatePosition: (id: string, newY: number) => void): 
   const id = Math.random().toString(36).substring(7)
   const speed = Math.floor(Math.random() * 5) + 1
   const color = `#${Math.floor(Math.random() * 16777215).toString(16)}`
-  const width = Math.floor(Math.random() * 100) + 50
-  const height = Math.floor(Math.random() * 100) + 50
+  const width = Math.floor(Math.random() * 2) + 50
+  const height = Math.floor(Math.random() * 2) + 50
   const position = { x: Math.floor(Math.random() * window.innerWidth), y: -height }
 
   return { id, speed, color, width, height, position, updatePosition }

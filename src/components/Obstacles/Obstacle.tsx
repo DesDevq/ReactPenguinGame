@@ -16,7 +16,7 @@ export const Obstacle: React.FC<IObstacle> = ({ id, updatePosition, position, sp
 
   return (
     <div
-      className={`absolute z-50`}
+      className='absolute z-50 rounded-full'
       style={{ top: position.y, left: position.x, width: `${width}px`, height: `${height}px`, backgroundColor: color }}
       id={id}
     >
