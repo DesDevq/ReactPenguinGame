@@ -12,4 +12,5 @@ export interface IObstacle
   width: number
   height: number
   position: IObstaclePosition
+  updatePosition: (id: string, newY: number) => void
 }

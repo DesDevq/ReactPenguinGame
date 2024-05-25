@@ -1,25 +1,23 @@
-import { IObstacle, IObstaclePosition } from '../../types/IObstacle'
-import { useEffect, useState } from 'react'
+import { IObstacle } from '../../types/IObstacle'
+import { useEffect } from 'react'
 
-export const Obstacle: React.FC<IObstacle> = ({ id, position, speed, color, width, height }) =>
+export const Obstacle: React.FC<IObstacle> = ({ id, updatePosition, position, speed, color, width, height }) =>
 {
-  const [currentPosition, setCurrentPosition] = useState<IObstaclePosition>(position)
-
   useEffect(() =>
   {
     const intervalId = setInterval(() =>
     {
-      setCurrentPosition((prev) => ({ ...prev, y: prev.y + speed }))
+      updatePosition(id, position.y + speed)
     }, 10)
 
     return () =>
       clearInterval(intervalId)
-  }, [speed])
+  }, [id, speed, position.y, updatePosition])
 
   return (
     <div
       className={`absolute z-50`}
-      style={{ top: currentPosition.y, left: currentPosition.x, width: `${width}px`, height: `${height}px`, backgroundColor: color }}
+      style={{ top: position.y, left: position.x, width: `${width}px`, height: `${height}px`, backgroundColor: color }}
       id={id}
     >
 
