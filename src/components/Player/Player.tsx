@@ -56,7 +56,7 @@ export const Player: React.FC<IPlayer> = ({ id, position, size }) =>
       <img
         className={`absolute w-[${size.width}px] h-[${size.height}px]`}
         style={{ left: currentPosition.x, top: currentPosition.y }}
-        src="/public/player.png"
+        src="/player.png"
         width={size.width}
         height={size.height}
         alt="Player"
