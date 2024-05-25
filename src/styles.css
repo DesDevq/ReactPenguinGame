@@ -1,16 +1,14 @@
-.container {
+.container1 {
     position: absolute;
     /* Fixed positioning to place the container relative to the viewport */
     top: 0;
     /* Align the container to the top */
-    left: 0;
     /* Align the container to the left */
-    width: 100%;
+    width: 100vw;
     /* Use flexbox for arranging the circles */
     height: 100%;
     pointer-events: none;
     /* Add some space between the circles */
-    z-index:9999;
     overflow: hidden;
     /* Optional padding around the circles */
 }
@@ -35,6 +33,8 @@
 
 .container2{
         position: relative;
+        display: flex;
+        justify-content: center;
             width: 100%;
             height: 100vh;
             overflow: hidden;
@@ -43,7 +43,7 @@
 
 .image{
     width: 90px;
-    display: block;
+    left: 50%;
     margin: auto;
     cursor: pointer;
 }

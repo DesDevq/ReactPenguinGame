@@ -29,13 +29,13 @@ const FallingCircles: React.FC = () => {
     };
 
     const newCircles = [];
-    for (let i = 0; i < 25; i++) {
+    for (let i = 0; i < 18; i++) {
       newCircles.push(createCircle(i));
     }
     setCircles(newCircles);
   }, []);
 
-  return <div className="container">{circles}</div>;
+  return <div className="container1">{circles}</div>;
 };
 
 export default FallingCircles;
