@@ -1,4 +1,4 @@
-import "./styles.css";
+import "../../src/styles.css";
 
 interface CircleProps {
   left: number;

@@ -1,10 +1,14 @@
 import FallingCircles from "./CirclesContainer";
-import { Movement } from "./movement";
+import { Player } from "./components/movement";
 
 function App() {
   return (
     <>
-      <Movement />
+      <Player
+        id="player1"
+        position={{ x: 0, y: 0 }}
+        size={{ width: 90, height: 150 }}
+      />
       <FallingCircles />
     </>
   );

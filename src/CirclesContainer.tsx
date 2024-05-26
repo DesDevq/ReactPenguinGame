@@ -1,7 +1,7 @@
 // src/FallingBalls.tsx
 import React, { useEffect, useState } from "react";
 import "./styles.css";
-import { Obstacles } from "./obstacles";
+import { Obstacles } from "./components/obstacles";
 
 const colors: string[] = ["red", "blue", "lime", "pink", "purple", "cyan"];
 
